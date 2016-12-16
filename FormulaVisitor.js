@@ -235,17 +235,37 @@ var FormulaVisitor = (function (_super) {
             Math.pow(10, this.visitExpression(context.expression(1)));
     };
     ;
-    FormulaVisitor.prototype.visitFrac = function (context) {
-        return this.visitExpression(context.expression(0)) / this.visitExpression(context.expression(1));
+    // Visit a parse tree produced by CalculatorParser#Float.
+    FormulaVisitor.prototype.visitFloat = function(context) {
+        return parseFloat(context.FLOAT().getText());
     };
-    ;
-    FormulaVisitor.prototype.visitIntAndFrac = function (context) {
+
+
+    // Visit a parse tree produced by CalculatorParser#Int.
+    FormulaVisitor.prototype.visitInt = function(context) {
+        return parseInt(context.INT().getText())
+    };
+
+
+    // Visit a parse tree produced by CalculatorParser#IntAndFrac.
+    FormulaVisitor.prototype.visitIntAndFrac = function(context) {
         if (context.INT(2)) {//带分数
             return parseFloat(context.INT(0).getText()) +
                 parseFloat(context.INT(1).getText()) / parseFloat(context.INT(2).getText());
         } else {//真分数
             return parseFloat(context.INT(0).getText()) / parseFloat(context.INT(1).getText());
         }
+    };
+    // Visit a parse tree produced by CalculatorParser#CalNumber.
+    FormulaVisitor.prototype.visitCalNumber = function(context) {
+        return this.visitExpression(context.number());
+    };
+
+    // Visit a parse tree produced by CalculatorParser#Brackets2Number.
+    FormulaVisitor.prototype.visitBrackets2Number = function(ctx) {
+    };
+    FormulaVisitor.prototype.visitFrac = function (context) {
+        return this.visitExpression(context.expression(0)) / this.visitExpression(context.expression(1));
     };
     ;
     return FormulaVisitor;

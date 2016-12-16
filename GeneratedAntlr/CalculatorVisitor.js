@@ -77,6 +77,11 @@ CalculatorVisitor.prototype.visitEuler = function(ctx) {
 };
 
 
+// Visit a parse tree produced by CalculatorParser#CalNumber.
+CalculatorVisitor.prototype.visitCalNumber = function(ctx) {
+};
+
+
 // Visit a parse tree produced by CalculatorParser#Arctan.
 CalculatorVisitor.prototype.visitArctan = function(ctx) {
 };
@@ -89,11 +94,6 @@ CalculatorVisitor.prototype.visitParenthesis = function(ctx) {
 
 // Visit a parse tree produced by CalculatorParser#Abs.
 CalculatorVisitor.prototype.visitAbs = function(ctx) {
-};
-
-
-// Visit a parse tree produced by CalculatorParser#Number.
-CalculatorVisitor.prototype.visitNumber = function(ctx) {
 };
 
 
@@ -177,11 +177,6 @@ CalculatorVisitor.prototype.visitUnary = function(ctx) {
 };
 
 
-// Visit a parse tree produced by CalculatorParser#Frac.
-CalculatorVisitor.prototype.visitFrac = function(ctx) {
-};
-
-
 // Visit a parse tree produced by CalculatorParser#Rad.
 CalculatorVisitor.prototype.visitRad = function(ctx) {
 };
@@ -189,11 +184,6 @@ CalculatorVisitor.prototype.visitRad = function(ctx) {
 
 // Visit a parse tree produced by CalculatorParser#Sqr.
 CalculatorVisitor.prototype.visitSqr = function(ctx) {
-};
-
-
-// Visit a parse tree produced by CalculatorParser#IntAndFrac.
-CalculatorVisitor.prototype.visitIntAndFrac = function(ctx) {
 };
 
 
@@ -229,6 +219,26 @@ CalculatorVisitor.prototype.visitRoundk = function(ctx) {
 
 // Visit a parse tree produced by CalculatorParser#compileUnit.
 CalculatorVisitor.prototype.visitCompileUnit = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#Float.
+CalculatorVisitor.prototype.visitFloat = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#Int.
+CalculatorVisitor.prototype.visitInt = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#IntAndFrac.
+CalculatorVisitor.prototype.visitIntAndFrac = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#Brackets2Number.
+CalculatorVisitor.prototype.visitBrackets2Number = function(ctx) {
 };
 
 

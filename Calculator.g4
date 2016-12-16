@@ -48,15 +48,13 @@ expression	:	FLOOR  expression 									#Floor			//	Round down to zero accuracy
 			|	DEG  expression 									#Deg			//	Radians to angle (360� base)
 			|	SQRT expression 									#Sqrt			//	Square root
 			|	SQR expression 										#Sqr			//	Square product
-			| 	FRAC '{' expression '}' '{' expression '}' 			#Frac			//	Frac
 			|	expression op = ('^'|'**') expression				#Pow			//	expr_1 to the expr_2 th power
 			|	expression (MOD | '%' ) expression					#Mod			//	Modulo
 			|	expression WHOLE expression							#Whole			//	Whole part of division rest
 			|	expression op = ('~'|'//') expression				#SqRoot			//	expr_1 nth root of expr_2
 			|	expression op = ('*'|'/') expression				#MulDiv			//	Multiplication or division
 			|	expression op = ('+'|'-') expression				#AddSub			//	Addition or subtraction
-			|	NUMBER												#Number			//	Single integer or float number
-			| 	INT? FRAC '{'  INT '}' '{' INT '}'  				#IntAndFrac
+			|	number												#CalNumber			//	Single integer or float number
 			|	'(' expression ')'									#Parenthesis	//	Expression within parentheses
 			|	PI '()'?											#Pi				//	Mathematical constant pi = 3,141593
 			|	expression EXPONENT expression						#Exponent		//  Exponent, e.g. 10e+43
@@ -73,14 +71,16 @@ compileUnit	:	EOF;
  * Lexer Rules
  */
 
-NUMBER		:	FLOAT 
-			|	INT
+number		:	FLOAT 												#Float
+			|	INT													#Int
+			| 	INT? FRAC '{'  INT '}' '{' INT '}'  				#IntAndFrac
+			| 	'{' number '}'         								# Brackets2Number
 			;
 FLOAT		:	INT (','|'.') DIGIT*
 			|	(','|'.') INT
 			;
-DIGIT		:	[0-9]									;
 INT			:	DIGIT+									;
+DIGIT		:	[0-9]									;
 MOD			:	[Mm][Oo][Dd]							;
 WHOLE		:	[Dd][Ii][Vv]							;
 MUL			:	'*'										;
