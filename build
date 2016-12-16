@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
+# rm -f ./GeneratedAntlr/*.js ./GeneratedAntlr/*.tokens ./GeneratedAntlr/*.java ./GeneratedAntlr/*.class
+# JavaScript
+antlr4 -visitor -no-listener -Dlanguage=JavaScript -o ./GeneratedAntlr Calculator.g4
+# cd GeneratedAntlr && sed -i '' 's/antlr4\/index/\.\/antlr4\/index/g' *.js 
+cd ..

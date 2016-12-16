@@ -235,6 +235,19 @@ var FormulaVisitor = (function (_super) {
             Math.pow(10, this.visitExpression(context.expression(1)));
     };
     ;
+    FormulaVisitor.prototype.visitFrac = function (context) {
+        return this.visitExpression(context.expression(0)) / this.visitExpression(context.expression(1));
+    };
+    ;
+    FormulaVisitor.prototype.visitIntAndFrac = function (context) {
+        if (context.INT(2)) {//带分数
+            return parseFloat(context.INT(0).getText()) +
+                parseFloat(context.INT(1).getText()) / parseFloat(context.INT(2).getText());
+        } else {//真分数
+            return parseFloat(context.INT(0).getText()) / parseFloat(context.INT(1).getText());
+        }
+    };
+    ;
     return FormulaVisitor;
 }(calculatorVisitor.CalculatorVisitor));
 exports.FormulaVisitor = FormulaVisitor;

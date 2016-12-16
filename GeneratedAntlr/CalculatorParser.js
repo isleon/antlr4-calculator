@@ -1,4 +1,4 @@
-// Generated from Calculator.g4 by ANTLR 4.5.2
+// Generated from Calculator.g4 by ANTLR 4.5.3
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var CalculatorVisitor = require('./CalculatorVisitor').CalculatorVisitor;
@@ -6,8 +6,8 @@ var CalculatorVisitor = require('./CalculatorVisitor').CalculatorVisitor;
 var grammarFileName = "Calculator.g4";
 
 var serializedATN = ["\u0003\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd",
-    "\u00035{\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
-    "\u0003\u0002\u0003\u0002\u0005\u0002\u000b\n\u0002\u0003\u0003\u0003",
+    "\u00039\u008d\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0004\u0003\u0002\u0003\u0002\u0005\u0002\u000b\n\u0002\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
@@ -20,75 +20,88 @@ var serializedATN = ["\u0003\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0005\u0003W\n\u0003\u0003\u0003\u0005\u0003Z\n\u0003\u0003\u0003",
+    "\u0005\u0003V\n\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003e\n\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003l\n\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0007\u0003",
-    "t\n\u0003\f\u0003\u000e\u0003w\u000b\u0003\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0002\u0003\u0004\u0005\u0002\u0004\u0006\u0002\u0007\u0003\u0002",
-    "\u0006\u0007\u0004\u0002\b\b\u000f\u000f\u0003\u0002\t\n\u0003\u0002",
-    "\u0011\u0012\u0003\u0002\u0013\u0014\u00a0\u0002\b\u0003\u0002\u0002",
-    "\u0002\u0004Y\u0003\u0002\u0002\u0002\u0006x\u0003\u0002\u0002\u0002",
-    "\b\n\u0005\u0004\u0003\u0002\t\u000b\u0005\u0006\u0004\u0002\n\t\u0003",
-    "\u0002\u0002\u0002\n\u000b\u0003\u0002\u0002\u0002\u000b\u0003\u0003",
-    "\u0002\u0002\u0002\f\r\b\u0003\u0001\u0002\r\u000e\u0007\u001b\u0002",
-    "\u0002\u000eZ\u0005\u0004\u0003*\u000f\u0010\u0007\u001c\u0002\u0002",
-    "\u0010Z\u0005\u0004\u0003)\u0011\u0012\u0007\u001d\u0002\u0002\u0012",
-    "Z\u0005\u0004\u0003(\u0013\u0014\u0007\u001f\u0002\u0002\u0014Z\u0005",
-    "\u0004\u0003&\u0015\u0016\u0007 \u0002\u0002\u0016Z\u0005\u0004\u0003",
-    "%\u0017\u0018\u0007!\u0002\u0002\u0018Z\u0005\u0004\u0003$\u0019\u001a",
-    "\u0007\"\u0002\u0002\u001aZ\u0005\u0004\u0003#\u001b\u001c\u0007#\u0002",
-    "\u0002\u001cZ\u0005\u0004\u0003\"\u001d\u001e\u0007$\u0002\u0002\u001e",
-    "Z\u0005\u0004\u0003!\u001f \u0007%\u0002\u0002 Z\u0005\u0004\u0003 ",
-    "!\"\u0007&\u0002\u0002\"Z\u0005\u0004\u0003\u001f#$\u0007\'\u0002\u0002",
-    "$Z\u0005\u0004\u0003\u001e%&\u0007(\u0002\u0002&Z\u0005\u0004\u0003",
-    "\u001d\'(\u0007)\u0002\u0002(Z\u0005\u0004\u0003\u001c)*\u0007*\u0002",
-    "\u0002*Z\u0005\u0004\u0003\u001b+,\u0007,\u0002\u0002,Z\u0005\u0004",
-    "\u0003\u0019-.\u0007-\u0002\u0002.Z\u0005\u0004\u0003\u0018/0\u0007",
-    ".\u0002\u00020Z\u0005\u0004\u0003\u001712\u0007/\u0002\u00022Z\u0005",
-    "\u0004\u0003\u001634\u00070\u0002\u00024Z\u0005\u0004\u0003\u001556",
-    "\u00071\u0002\u00026Z\u0005\u0004\u0003\u001478\u00072\u0002\u00028",
-    "Z\u0005\u0004\u0003\u00139:\u0007\u0019\u0002\u0002:Z\u0005\u0004\u0003",
-    "\u0012;<\u0007\u001a\u0002\u0002<Z\u0005\u0004\u0003\u0011=>\u0007\u0014",
-    "\u0002\u0002>Z\u0005\u0004\u0003\u0004?@\u0007\u0013\u0002\u0002@Z\u0005",
-    "\u0004\u0003\u0003AB\u0007\u001e\u0002\u0002BC\u0007\u0003\u0002\u0002",
-    "CD\u0005\u0004\u0003\u0002DE\u0007\u0004\u0002\u0002EF\u0005\u0004\u0003",
-    "\u0002FG\u0007\u0005\u0002\u0002GZ\u0003\u0002\u0002\u0002HI\u0007+",
-    "\u0002\u0002IJ\u0007\u0003\u0002\u0002JK\u0005\u0004\u0003\u0002KL\u0007",
-    "\u0004\u0002\u0002LM\u0005\u0004\u0003\u0002MN\u0007\u0005\u0002\u0002",
-    "NZ\u0003\u0002\u0002\u0002OZ\u0007\f\u0002\u0002PQ\u0007\u0003\u0002",
-    "\u0002QR\u0005\u0004\u0003\u0002RS\u0007\u0005\u0002\u0002SZ\u0003\u0002",
-    "\u0002\u0002TV\u0007\u0015\u0002\u0002UW\u0007\u000b\u0002\u0002VU\u0003",
-    "\u0002\u0002\u0002VW\u0003\u0002\u0002\u0002WZ\u0003\u0002\u0002\u0002",
-    "XZ\u0007\u0018\u0002\u0002Y\f\u0003\u0002\u0002\u0002Y\u000f\u0003\u0002",
-    "\u0002\u0002Y\u0011\u0003\u0002\u0002\u0002Y\u0013\u0003\u0002\u0002",
-    "\u0002Y\u0015\u0003\u0002\u0002\u0002Y\u0017\u0003\u0002\u0002\u0002",
-    "Y\u0019\u0003\u0002\u0002\u0002Y\u001b\u0003\u0002\u0002\u0002Y\u001d",
-    "\u0003\u0002\u0002\u0002Y\u001f\u0003\u0002\u0002\u0002Y!\u0003\u0002",
-    "\u0002\u0002Y#\u0003\u0002\u0002\u0002Y%\u0003\u0002\u0002\u0002Y\'",
-    "\u0003\u0002\u0002\u0002Y)\u0003\u0002\u0002\u0002Y+\u0003\u0002\u0002",
-    "\u0002Y-\u0003\u0002\u0002\u0002Y/\u0003\u0002\u0002\u0002Y1\u0003\u0002",
-    "\u0002\u0002Y3\u0003\u0002\u0002\u0002Y5\u0003\u0002\u0002\u0002Y7\u0003",
-    "\u0002\u0002\u0002Y9\u0003\u0002\u0002\u0002Y;\u0003\u0002\u0002\u0002",
-    "Y=\u0003\u0002\u0002\u0002Y?\u0003\u0002\u0002\u0002YA\u0003\u0002\u0002",
-    "\u0002YH\u0003\u0002\u0002\u0002YO\u0003\u0002\u0002\u0002YP\u0003\u0002",
-    "\u0002\u0002YT\u0003\u0002\u0002\u0002YX\u0003\u0002\u0002\u0002Zu\u0003",
-    "\u0002\u0002\u0002[\\\f\u0010\u0002\u0002\\]\t\u0002\u0002\u0002]t\u0005",
-    "\u0004\u0003\u0011^_\f\u000f\u0002\u0002_`\t\u0003\u0002\u0002`t\u0005",
-    "\u0004\u0003\u0010ab\f\u000e\u0002\u0002bc\u0007\u0010\u0002\u0002c",
-    "t\u0005\u0004\u0003\u000fde\f\r\u0002\u0002ef\t\u0004\u0002\u0002ft",
-    "\u0005\u0004\u0003\u000egh\f\f\u0002\u0002hi\t\u0005\u0002\u0002it\u0005",
-    "\u0004\u0003\rjk\f\u000b\u0002\u0002kl\t\u0006\u0002\u0002lt\u0005\u0004",
-    "\u0003\fmn\f\u0007\u0002\u0002no\u0007\u0016\u0002\u0002ot\u0005\u0004",
-    "\u0003\bpq\f\u0006\u0002\u0002qr\u0007\u0017\u0002\u0002rt\u0005\u0004",
-    "\u0003\u0007s[\u0003\u0002\u0002\u0002s^\u0003\u0002\u0002\u0002sa\u0003",
-    "\u0002\u0002\u0002sd\u0003\u0002\u0002\u0002sg\u0003\u0002\u0002\u0002",
-    "sj\u0003\u0002\u0002\u0002sm\u0003\u0002\u0002\u0002sp\u0003\u0002\u0002",
-    "\u0002tw\u0003\u0002\u0002\u0002us\u0003\u0002\u0002\u0002uv\u0003\u0002",
-    "\u0002\u0002v\u0005\u0003\u0002\u0002\u0002wu\u0003\u0002\u0002\u0002",
-    "xy\u0007\u0002\u0002\u0003y\u0007\u0003\u0002\u0002\u0002\u0007\nVY",
-    "su"].join("");
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0007\u0003\u0086\n\u0003\f\u0003\u000e\u0003\u0089\u000b\u0003\u0003",
+    "\u0004\u0003\u0004\u0003\u0004\u0002\u0003\u0004\u0005\u0002\u0004\u0006",
+    "\u0002\u0007\u0003\u0002\b\t\u0004\u0002\n\n\u0012\u0012\u0003\u0002",
+    "\u000b\f\u0003\u0002\u0014\u0015\u0003\u0002\u0016\u0017\u00b5\u0002",
+    "\b\u0003\u0002\u0002\u0002\u0004k\u0003\u0002\u0002\u0002\u0006\u008a",
+    "\u0003\u0002\u0002\u0002\b\n\u0005\u0004\u0003\u0002\t\u000b\u0005\u0006",
+    "\u0004\u0002\n\t\u0003\u0002\u0002\u0002\n\u000b\u0003\u0002\u0002\u0002",
+    "\u000b\u0003\u0003\u0002\u0002\u0002\f\r\b\u0003\u0001\u0002\r\u000e",
+    "\u0007\u001f\u0002\u0002\u000el\u0005\u0004\u0003,\u000f\u0010\u0007",
+    " \u0002\u0002\u0010l\u0005\u0004\u0003+\u0011\u0012\u0007!\u0002\u0002",
+    "\u0012l\u0005\u0004\u0003*\u0013\u0014\u0007\"\u0002\u0002\u0014\u0015",
+    "\u0007\u0003\u0002\u0002\u0015\u0016\u0005\u0004\u0003\u0002\u0016\u0017",
+    "\u0007\u0004\u0002\u0002\u0017\u0018\u0005\u0004\u0003\u0002\u0018\u0019",
+    "\u0007\u0005\u0002\u0002\u0019l\u0003\u0002\u0002\u0002\u001a\u001b",
+    "\u0007#\u0002\u0002\u001bl\u0005\u0004\u0003(\u001c\u001d\u0007$\u0002",
+    "\u0002\u001dl\u0005\u0004\u0003\'\u001e\u001f\u0007%\u0002\u0002\u001f",
+    "l\u0005\u0004\u0003& !\u0007&\u0002\u0002!l\u0005\u0004\u0003%\"#\u0007",
+    "\'\u0002\u0002#l\u0005\u0004\u0003$$%\u0007(\u0002\u0002%l\u0005\u0004",
+    "\u0003#&\'\u0007)\u0002\u0002\'l\u0005\u0004\u0003\"()\u0007*\u0002",
+    "\u0002)l\u0005\u0004\u0003!*+\u0007+\u0002\u0002+l\u0005\u0004\u0003",
+    " ,-\u0007,\u0002\u0002-l\u0005\u0004\u0003\u001f./\u0007-\u0002\u0002",
+    "/l\u0005\u0004\u0003\u001e01\u0007.\u0002\u00021l\u0005\u0004\u0003",
+    "\u001d23\u0007/\u0002\u000234\u0007\u0003\u0002\u000245\u0005\u0004",
+    "\u0003\u000256\u0007\u0004\u0002\u000267\u0005\u0004\u0003\u000278\u0007",
+    "\u0005\u0002\u00028l\u0003\u0002\u0002\u00029:\u00070\u0002\u0002:l",
+    "\u0005\u0004\u0003\u001b;<\u00071\u0002\u0002<l\u0005\u0004\u0003\u001a",
+    "=>\u00072\u0002\u0002>l\u0005\u0004\u0003\u0019?@\u00073\u0002\u0002",
+    "@l\u0005\u0004\u0003\u0018AB\u00074\u0002\u0002Bl\u0005\u0004\u0003",
+    "\u0017CD\u00075\u0002\u0002Dl\u0005\u0004\u0003\u0016EF\u00076\u0002",
+    "\u0002Fl\u0005\u0004\u0003\u0015GH\u0007\u001d\u0002\u0002Hl\u0005\u0004",
+    "\u0003\u0014IJ\u0007\u001e\u0002\u0002Jl\u0005\u0004\u0003\u0013KL\u0007",
+    "\u0018\u0002\u0002LM\u0007\u0006\u0002\u0002MN\u0005\u0004\u0003\u0002",
+    "NO\u0007\u0007\u0002\u0002OP\u0007\u0006\u0002\u0002PQ\u0005\u0004\u0003",
+    "\u0002QR\u0007\u0007\u0002\u0002Rl\u0003\u0002\u0002\u0002Sl\u0007\u000e",
+    "\u0002\u0002TV\u0007\u0011\u0002\u0002UT\u0003\u0002\u0002\u0002UV\u0003",
+    "\u0002\u0002\u0002VW\u0003\u0002\u0002\u0002WX\u0007\u0018\u0002\u0002",
+    "XY\u0007\u0006\u0002\u0002YZ\u0007\u0011\u0002\u0002Z[\u0007\u0007\u0002",
+    "\u0002[\\\u0007\u0006\u0002\u0002\\]\u0007\u0011\u0002\u0002]l\u0007",
+    "\u0007\u0002\u0002^_\u0007\u0003\u0002\u0002_`\u0005\u0004\u0003\u0002",
+    "`a\u0007\u0005\u0002\u0002al\u0003\u0002\u0002\u0002bd\u0007\u0019\u0002",
+    "\u0002ce\u0007\r\u0002\u0002dc\u0003\u0002\u0002\u0002de\u0003\u0002",
+    "\u0002\u0002el\u0003\u0002\u0002\u0002fl\u0007\u001c\u0002\u0002gh\u0007",
+    "\u0017\u0002\u0002hl\u0005\u0004\u0003\u0004ij\u0007\u0016\u0002\u0002",
+    "jl\u0005\u0004\u0003\u0003k\f\u0003\u0002\u0002\u0002k\u000f\u0003\u0002",
+    "\u0002\u0002k\u0011\u0003\u0002\u0002\u0002k\u0013\u0003\u0002\u0002",
+    "\u0002k\u001a\u0003\u0002\u0002\u0002k\u001c\u0003\u0002\u0002\u0002",
+    "k\u001e\u0003\u0002\u0002\u0002k \u0003\u0002\u0002\u0002k\"\u0003\u0002",
+    "\u0002\u0002k$\u0003\u0002\u0002\u0002k&\u0003\u0002\u0002\u0002k(\u0003",
+    "\u0002\u0002\u0002k*\u0003\u0002\u0002\u0002k,\u0003\u0002\u0002\u0002",
+    "k.\u0003\u0002\u0002\u0002k0\u0003\u0002\u0002\u0002k2\u0003\u0002\u0002",
+    "\u0002k9\u0003\u0002\u0002\u0002k;\u0003\u0002\u0002\u0002k=\u0003\u0002",
+    "\u0002\u0002k?\u0003\u0002\u0002\u0002kA\u0003\u0002\u0002\u0002kC\u0003",
+    "\u0002\u0002\u0002kE\u0003\u0002\u0002\u0002kG\u0003\u0002\u0002\u0002",
+    "kI\u0003\u0002\u0002\u0002kK\u0003\u0002\u0002\u0002kS\u0003\u0002\u0002",
+    "\u0002kU\u0003\u0002\u0002\u0002k^\u0003\u0002\u0002\u0002kb\u0003\u0002",
+    "\u0002\u0002kf\u0003\u0002\u0002\u0002kg\u0003\u0002\u0002\u0002ki\u0003",
+    "\u0002\u0002\u0002l\u0087\u0003\u0002\u0002\u0002mn\f\u0011\u0002\u0002",
+    "no\t\u0002\u0002\u0002o\u0086\u0005\u0004\u0003\u0012pq\f\u0010\u0002",
+    "\u0002qr\t\u0003\u0002\u0002r\u0086\u0005\u0004\u0003\u0011st\f\u000f",
+    "\u0002\u0002tu\u0007\u0013\u0002\u0002u\u0086\u0005\u0004\u0003\u0010",
+    "vw\f\u000e\u0002\u0002wx\t\u0004\u0002\u0002x\u0086\u0005\u0004\u0003",
+    "\u000fyz\f\r\u0002\u0002z{\t\u0005\u0002\u0002{\u0086\u0005\u0004\u0003",
+    "\u000e|}\f\f\u0002\u0002}~\t\u0006\u0002\u0002~\u0086\u0005\u0004\u0003",
+    "\r\u007f\u0080\f\u0007\u0002\u0002\u0080\u0081\u0007\u001a\u0002\u0002",
+    "\u0081\u0086\u0005\u0004\u0003\b\u0082\u0083\f\u0006\u0002\u0002\u0083",
+    "\u0084\u0007\u001b\u0002\u0002\u0084\u0086\u0005\u0004\u0003\u0007\u0085",
+    "m\u0003\u0002\u0002\u0002\u0085p\u0003\u0002\u0002\u0002\u0085s\u0003",
+    "\u0002\u0002\u0002\u0085v\u0003\u0002\u0002\u0002\u0085y\u0003\u0002",
+    "\u0002\u0002\u0085|\u0003\u0002\u0002\u0002\u0085\u007f\u0003\u0002",
+    "\u0002\u0002\u0085\u0082\u0003\u0002\u0002\u0002\u0086\u0089\u0003\u0002",
+    "\u0002\u0002\u0087\u0085\u0003\u0002\u0002\u0002\u0087\u0088\u0003\u0002",
+    "\u0002\u0002\u0088\u0005\u0003\u0002\u0002\u0002\u0089\u0087\u0003\u0002",
+    "\u0002\u0002\u008a\u008b\u0007\u0002\u0002\u0003\u008b\u0007\u0003\u0002",
+    "\u0002\u0002\b\nUdk\u0085\u0087"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -97,18 +110,19 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, "'('", "';'", "')'", "'^'", "'**'", "'%'", "'~'", 
-                     "'//'", "'()'", null, null, null, null, null, "'*'", 
-                     "'/'", "'+'", "'-'" ];
+var literalNames = [ null, "'('", "';'", "')'", "'{'", "'}'", "'^'", "'**'", 
+                     "'%'", "'~'", "'//'", "'()'", null, null, null, null, 
+                     null, null, "'*'", "'/'", "'+'", "'-'", "'\\frac'" ];
 
 var symbolicNames = [ null, null, null, null, null, null, null, null, null, 
-                      null, "NUMBER", "FLOAT", "DIGIT", "MOD", "WHOLE", 
-                      "MUL", "DIV", "ADD", "SUB", "PI", "EXPONENT", "NEGEXPONENT", 
-                      "EULER", "SQRT", "SQR", "FLOOR", "CEIL", "ABS", "ROUNDK", 
-                      "ROUND", "TRUNC", "SIN", "COS", "TAN", "COT", "SINH", 
-                      "COSH", "TANH", "ARCSIN", "ARCCOS", "ARCTAN", "ARCTAN2", 
-                      "ARCCOT", "EXP", "LN", "EEX", "LOG", "RAD", "DEG", 
-                      "WS", "COM", "INVALID" ];
+                      null, null, null, "NUMBER", "FLOAT", "DIGIT", "INT", 
+                      "MOD", "WHOLE", "MUL", "DIV", "ADD", "SUB", "FRAC", 
+                      "PI", "EXPONENT", "NEGEXPONENT", "EULER", "SQRT", 
+                      "SQR", "FLOOR", "CEIL", "ABS", "ROUNDK", "ROUND", 
+                      "TRUNC", "SIN", "COS", "TAN", "COT", "SINH", "COSH", 
+                      "TANH", "ARCSIN", "ARCCOS", "ARCTAN", "ARCTAN2", "ARCCOT", 
+                      "EXP", "LN", "EEX", "LOG", "RAD", "DEG", "WS", "COM", 
+                      "INVALID" ];
 
 var ruleNames =  [ "calculator", "expression", "compileUnit" ];
 
@@ -140,48 +154,52 @@ CalculatorParser.T__5 = 6;
 CalculatorParser.T__6 = 7;
 CalculatorParser.T__7 = 8;
 CalculatorParser.T__8 = 9;
-CalculatorParser.NUMBER = 10;
-CalculatorParser.FLOAT = 11;
-CalculatorParser.DIGIT = 12;
-CalculatorParser.MOD = 13;
-CalculatorParser.WHOLE = 14;
-CalculatorParser.MUL = 15;
-CalculatorParser.DIV = 16;
-CalculatorParser.ADD = 17;
-CalculatorParser.SUB = 18;
-CalculatorParser.PI = 19;
-CalculatorParser.EXPONENT = 20;
-CalculatorParser.NEGEXPONENT = 21;
-CalculatorParser.EULER = 22;
-CalculatorParser.SQRT = 23;
-CalculatorParser.SQR = 24;
-CalculatorParser.FLOOR = 25;
-CalculatorParser.CEIL = 26;
-CalculatorParser.ABS = 27;
-CalculatorParser.ROUNDK = 28;
-CalculatorParser.ROUND = 29;
-CalculatorParser.TRUNC = 30;
-CalculatorParser.SIN = 31;
-CalculatorParser.COS = 32;
-CalculatorParser.TAN = 33;
-CalculatorParser.COT = 34;
-CalculatorParser.SINH = 35;
-CalculatorParser.COSH = 36;
-CalculatorParser.TANH = 37;
-CalculatorParser.ARCSIN = 38;
-CalculatorParser.ARCCOS = 39;
-CalculatorParser.ARCTAN = 40;
-CalculatorParser.ARCTAN2 = 41;
-CalculatorParser.ARCCOT = 42;
-CalculatorParser.EXP = 43;
-CalculatorParser.LN = 44;
-CalculatorParser.EEX = 45;
-CalculatorParser.LOG = 46;
-CalculatorParser.RAD = 47;
-CalculatorParser.DEG = 48;
-CalculatorParser.WS = 49;
-CalculatorParser.COM = 50;
-CalculatorParser.INVALID = 51;
+CalculatorParser.T__9 = 10;
+CalculatorParser.T__10 = 11;
+CalculatorParser.NUMBER = 12;
+CalculatorParser.FLOAT = 13;
+CalculatorParser.DIGIT = 14;
+CalculatorParser.INT = 15;
+CalculatorParser.MOD = 16;
+CalculatorParser.WHOLE = 17;
+CalculatorParser.MUL = 18;
+CalculatorParser.DIV = 19;
+CalculatorParser.ADD = 20;
+CalculatorParser.SUB = 21;
+CalculatorParser.FRAC = 22;
+CalculatorParser.PI = 23;
+CalculatorParser.EXPONENT = 24;
+CalculatorParser.NEGEXPONENT = 25;
+CalculatorParser.EULER = 26;
+CalculatorParser.SQRT = 27;
+CalculatorParser.SQR = 28;
+CalculatorParser.FLOOR = 29;
+CalculatorParser.CEIL = 30;
+CalculatorParser.ABS = 31;
+CalculatorParser.ROUNDK = 32;
+CalculatorParser.ROUND = 33;
+CalculatorParser.TRUNC = 34;
+CalculatorParser.SIN = 35;
+CalculatorParser.COS = 36;
+CalculatorParser.TAN = 37;
+CalculatorParser.COT = 38;
+CalculatorParser.SINH = 39;
+CalculatorParser.COSH = 40;
+CalculatorParser.TANH = 41;
+CalculatorParser.ARCSIN = 42;
+CalculatorParser.ARCCOS = 43;
+CalculatorParser.ARCTAN = 44;
+CalculatorParser.ARCTAN2 = 45;
+CalculatorParser.ARCCOT = 46;
+CalculatorParser.EXP = 47;
+CalculatorParser.LN = 48;
+CalculatorParser.EEX = 49;
+CalculatorParser.LOG = 50;
+CalculatorParser.RAD = 51;
+CalculatorParser.DEG = 52;
+CalculatorParser.WS = 53;
+CalculatorParser.COM = 54;
+CalculatorParser.INVALID = 55;
 
 CalculatorParser.RULE_calculator = 0;
 CalculatorParser.RULE_expression = 1;
@@ -1163,6 +1181,40 @@ UnaryContext.prototype.accept = function(visitor) {
 };
 
 
+function FracContext(parser, ctx) {
+	ExpressionContext.call(this, parser);
+    ExpressionContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+FracContext.prototype = Object.create(ExpressionContext.prototype);
+FracContext.prototype.constructor = FracContext;
+
+CalculatorParser.FracContext = FracContext;
+
+FracContext.prototype.FRAC = function() {
+    return this.getToken(CalculatorParser.FRAC, 0);
+};
+
+FracContext.prototype.expression = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(ExpressionContext);
+    } else {
+        return this.getTypedRuleContext(ExpressionContext,i);
+    }
+};
+FracContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof CalculatorVisitor ) {
+        return visitor.visitFrac(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 function RadContext(parser, ctx) {
 	ExpressionContext.call(this, parser);
     ExpressionContext.prototype.copyFrom.call(this, ctx);
@@ -1211,6 +1263,41 @@ SqrContext.prototype.expression = function() {
 SqrContext.prototype.accept = function(visitor) {
     if ( visitor instanceof CalculatorVisitor ) {
         return visitor.visitSqr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function IntAndFracContext(parser, ctx) {
+	ExpressionContext.call(this, parser);
+    ExpressionContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+IntAndFracContext.prototype = Object.create(ExpressionContext.prototype);
+IntAndFracContext.prototype.constructor = IntAndFracContext;
+
+CalculatorParser.IntAndFracContext = IntAndFracContext;
+
+IntAndFracContext.prototype.FRAC = function() {
+    return this.getToken(CalculatorParser.FRAC, 0);
+};
+
+IntAndFracContext.prototype.INT = function(i) {
+	if(i===undefined) {
+		i = null;
+	}
+    if(i===null) {
+        return this.getTokens(CalculatorParser.INT);
+    } else {
+        return this.getToken(CalculatorParser.INT, i);
+    }
+};
+
+IntAndFracContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof CalculatorVisitor ) {
+        return visitor.visitIntAndFrac(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -1404,9 +1491,11 @@ CalculatorParser.prototype.expression = function(_p) {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 87;
-        switch(this._input.LA(1)) {
-        case CalculatorParser.FLOOR:
+        this.state = 105;
+        this._errHandler.sync(this);
+        var la_ = this._interp.adaptivePredict(this._input,3,this._ctx);
+        switch(la_) {
+        case 1:
             localctx = new FloorContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
@@ -1414,404 +1503,481 @@ CalculatorParser.prototype.expression = function(_p) {
             this.state = 11;
             this.match(CalculatorParser.FLOOR);
             this.state = 12;
-            this.expression(40);
+            this.expression(42);
             break;
-        case CalculatorParser.CEIL:
+
+        case 2:
             localctx = new CeilContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
             this.state = 13;
             this.match(CalculatorParser.CEIL);
             this.state = 14;
-            this.expression(39);
+            this.expression(41);
             break;
-        case CalculatorParser.ABS:
+
+        case 3:
             localctx = new AbsContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
             this.state = 15;
             this.match(CalculatorParser.ABS);
             this.state = 16;
-            this.expression(38);
+            this.expression(40);
             break;
-        case CalculatorParser.ROUND:
-            localctx = new RoundContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 17;
-            this.match(CalculatorParser.ROUND);
-            this.state = 18;
-            this.expression(36);
-            break;
-        case CalculatorParser.TRUNC:
-            localctx = new TruncContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 19;
-            this.match(CalculatorParser.TRUNC);
-            this.state = 20;
-            this.expression(35);
-            break;
-        case CalculatorParser.SIN:
-            localctx = new SinContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 21;
-            this.match(CalculatorParser.SIN);
-            this.state = 22;
-            this.expression(34);
-            break;
-        case CalculatorParser.COS:
-            localctx = new CosContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 23;
-            this.match(CalculatorParser.COS);
-            this.state = 24;
-            this.expression(33);
-            break;
-        case CalculatorParser.TAN:
-            localctx = new TanContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 25;
-            this.match(CalculatorParser.TAN);
-            this.state = 26;
-            this.expression(32);
-            break;
-        case CalculatorParser.COT:
-            localctx = new CotContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 27;
-            this.match(CalculatorParser.COT);
-            this.state = 28;
-            this.expression(31);
-            break;
-        case CalculatorParser.SINH:
-            localctx = new SinhContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 29;
-            this.match(CalculatorParser.SINH);
-            this.state = 30;
-            this.expression(30);
-            break;
-        case CalculatorParser.COSH:
-            localctx = new CoshContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 31;
-            this.match(CalculatorParser.COSH);
-            this.state = 32;
-            this.expression(29);
-            break;
-        case CalculatorParser.TANH:
-            localctx = new TanhContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 33;
-            this.match(CalculatorParser.TANH);
-            this.state = 34;
-            this.expression(28);
-            break;
-        case CalculatorParser.ARCSIN:
-            localctx = new ArcsinContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 35;
-            this.match(CalculatorParser.ARCSIN);
-            this.state = 36;
-            this.expression(27);
-            break;
-        case CalculatorParser.ARCCOS:
-            localctx = new ArccosContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 37;
-            this.match(CalculatorParser.ARCCOS);
-            this.state = 38;
-            this.expression(26);
-            break;
-        case CalculatorParser.ARCTAN:
-            localctx = new ArctanContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 39;
-            this.match(CalculatorParser.ARCTAN);
-            this.state = 40;
-            this.expression(25);
-            break;
-        case CalculatorParser.ARCCOT:
-            localctx = new ArccotContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 41;
-            this.match(CalculatorParser.ARCCOT);
-            this.state = 42;
-            this.expression(23);
-            break;
-        case CalculatorParser.EXP:
-            localctx = new ExpContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 43;
-            this.match(CalculatorParser.EXP);
-            this.state = 44;
-            this.expression(22);
-            break;
-        case CalculatorParser.LN:
-            localctx = new LnContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 45;
-            this.match(CalculatorParser.LN);
-            this.state = 46;
-            this.expression(21);
-            break;
-        case CalculatorParser.EEX:
-            localctx = new EexContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 47;
-            this.match(CalculatorParser.EEX);
-            this.state = 48;
-            this.expression(20);
-            break;
-        case CalculatorParser.LOG:
-            localctx = new LogContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 49;
-            this.match(CalculatorParser.LOG);
-            this.state = 50;
-            this.expression(19);
-            break;
-        case CalculatorParser.RAD:
-            localctx = new RadContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 51;
-            this.match(CalculatorParser.RAD);
-            this.state = 52;
-            this.expression(18);
-            break;
-        case CalculatorParser.DEG:
-            localctx = new DegContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 53;
-            this.match(CalculatorParser.DEG);
-            this.state = 54;
-            this.expression(17);
-            break;
-        case CalculatorParser.SQRT:
-            localctx = new SqrtContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 55;
-            this.match(CalculatorParser.SQRT);
-            this.state = 56;
-            this.expression(16);
-            break;
-        case CalculatorParser.SQR:
-            localctx = new SqrContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 57;
-            this.match(CalculatorParser.SQR);
-            this.state = 58;
-            this.expression(15);
-            break;
-        case CalculatorParser.SUB:
-            localctx = new UnaryContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 59;
-            this.match(CalculatorParser.SUB);
-            this.state = 60;
-            this.expression(2);
-            break;
-        case CalculatorParser.ADD:
-            localctx = new UnaryPlusContext(this, localctx);
-            this._ctx = localctx;
-            _prevctx = localctx;
-            this.state = 61;
-            this.match(CalculatorParser.ADD);
-            this.state = 62;
-            this.expression(1);
-            break;
-        case CalculatorParser.ROUNDK:
+
+        case 4:
             localctx = new RoundkContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 63;
+            this.state = 17;
             this.match(CalculatorParser.ROUNDK);
-            this.state = 64;
+            this.state = 18;
             this.match(CalculatorParser.T__0);
-            this.state = 65;
+            this.state = 19;
             this.expression(0);
-            this.state = 66;
+            this.state = 20;
             this.match(CalculatorParser.T__1);
-            this.state = 67;
+            this.state = 21;
             this.expression(0);
-            this.state = 68;
+            this.state = 22;
             this.match(CalculatorParser.T__2);
             break;
-        case CalculatorParser.ARCTAN2:
+
+        case 5:
+            localctx = new RoundContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 24;
+            this.match(CalculatorParser.ROUND);
+            this.state = 25;
+            this.expression(38);
+            break;
+
+        case 6:
+            localctx = new TruncContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 26;
+            this.match(CalculatorParser.TRUNC);
+            this.state = 27;
+            this.expression(37);
+            break;
+
+        case 7:
+            localctx = new SinContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 28;
+            this.match(CalculatorParser.SIN);
+            this.state = 29;
+            this.expression(36);
+            break;
+
+        case 8:
+            localctx = new CosContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 30;
+            this.match(CalculatorParser.COS);
+            this.state = 31;
+            this.expression(35);
+            break;
+
+        case 9:
+            localctx = new TanContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 32;
+            this.match(CalculatorParser.TAN);
+            this.state = 33;
+            this.expression(34);
+            break;
+
+        case 10:
+            localctx = new CotContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 34;
+            this.match(CalculatorParser.COT);
+            this.state = 35;
+            this.expression(33);
+            break;
+
+        case 11:
+            localctx = new SinhContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 36;
+            this.match(CalculatorParser.SINH);
+            this.state = 37;
+            this.expression(32);
+            break;
+
+        case 12:
+            localctx = new CoshContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 38;
+            this.match(CalculatorParser.COSH);
+            this.state = 39;
+            this.expression(31);
+            break;
+
+        case 13:
+            localctx = new TanhContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 40;
+            this.match(CalculatorParser.TANH);
+            this.state = 41;
+            this.expression(30);
+            break;
+
+        case 14:
+            localctx = new ArcsinContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 42;
+            this.match(CalculatorParser.ARCSIN);
+            this.state = 43;
+            this.expression(29);
+            break;
+
+        case 15:
+            localctx = new ArccosContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 44;
+            this.match(CalculatorParser.ARCCOS);
+            this.state = 45;
+            this.expression(28);
+            break;
+
+        case 16:
+            localctx = new ArctanContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 46;
+            this.match(CalculatorParser.ARCTAN);
+            this.state = 47;
+            this.expression(27);
+            break;
+
+        case 17:
             localctx = new Arctan2Context(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 70;
+            this.state = 48;
             this.match(CalculatorParser.ARCTAN2);
-            this.state = 71;
+            this.state = 49;
             this.match(CalculatorParser.T__0);
-            this.state = 72;
+            this.state = 50;
             this.expression(0);
-            this.state = 73;
+            this.state = 51;
             this.match(CalculatorParser.T__1);
-            this.state = 74;
+            this.state = 52;
             this.expression(0);
-            this.state = 75;
+            this.state = 53;
             this.match(CalculatorParser.T__2);
             break;
-        case CalculatorParser.NUMBER:
+
+        case 18:
+            localctx = new ArccotContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 55;
+            this.match(CalculatorParser.ARCCOT);
+            this.state = 56;
+            this.expression(25);
+            break;
+
+        case 19:
+            localctx = new ExpContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 57;
+            this.match(CalculatorParser.EXP);
+            this.state = 58;
+            this.expression(24);
+            break;
+
+        case 20:
+            localctx = new LnContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 59;
+            this.match(CalculatorParser.LN);
+            this.state = 60;
+            this.expression(23);
+            break;
+
+        case 21:
+            localctx = new EexContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 61;
+            this.match(CalculatorParser.EEX);
+            this.state = 62;
+            this.expression(22);
+            break;
+
+        case 22:
+            localctx = new LogContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 63;
+            this.match(CalculatorParser.LOG);
+            this.state = 64;
+            this.expression(21);
+            break;
+
+        case 23:
+            localctx = new RadContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 65;
+            this.match(CalculatorParser.RAD);
+            this.state = 66;
+            this.expression(20);
+            break;
+
+        case 24:
+            localctx = new DegContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 67;
+            this.match(CalculatorParser.DEG);
+            this.state = 68;
+            this.expression(19);
+            break;
+
+        case 25:
+            localctx = new SqrtContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 69;
+            this.match(CalculatorParser.SQRT);
+            this.state = 70;
+            this.expression(18);
+            break;
+
+        case 26:
+            localctx = new SqrContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 71;
+            this.match(CalculatorParser.SQR);
+            this.state = 72;
+            this.expression(17);
+            break;
+
+        case 27:
+            localctx = new FracContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 73;
+            this.match(CalculatorParser.FRAC);
+            this.state = 74;
+            this.match(CalculatorParser.T__3);
+            this.state = 75;
+            this.expression(0);
+            this.state = 76;
+            this.match(CalculatorParser.T__4);
+            this.state = 77;
+            this.match(CalculatorParser.T__3);
+            this.state = 78;
+            this.expression(0);
+            this.state = 79;
+            this.match(CalculatorParser.T__4);
+            break;
+
+        case 28:
             localctx = new NumberContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 77;
+            this.state = 81;
             this.match(CalculatorParser.NUMBER);
             break;
-        case CalculatorParser.T__0:
+
+        case 29:
+            localctx = new IntAndFracContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 83;
+            _la = this._input.LA(1);
+            if(_la===CalculatorParser.INT) {
+                this.state = 82;
+                this.match(CalculatorParser.INT);
+            }
+
+            this.state = 85;
+            this.match(CalculatorParser.FRAC);
+            this.state = 86;
+            this.match(CalculatorParser.T__3);
+            this.state = 87;
+            this.match(CalculatorParser.INT);
+            this.state = 88;
+            this.match(CalculatorParser.T__4);
+            this.state = 89;
+            this.match(CalculatorParser.T__3);
+            this.state = 90;
+            this.match(CalculatorParser.INT);
+            this.state = 91;
+            this.match(CalculatorParser.T__4);
+            break;
+
+        case 30:
             localctx = new ParenthesisContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 78;
+            this.state = 92;
             this.match(CalculatorParser.T__0);
-            this.state = 79;
+            this.state = 93;
             this.expression(0);
-            this.state = 80;
+            this.state = 94;
             this.match(CalculatorParser.T__2);
             break;
-        case CalculatorParser.PI:
+
+        case 31:
             localctx = new PiContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 82;
+            this.state = 96;
             this.match(CalculatorParser.PI);
-            this.state = 84;
+            this.state = 98;
             this._errHandler.sync(this);
-            var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
+            var la_ = this._interp.adaptivePredict(this._input,2,this._ctx);
             if(la_===1) {
-                this.state = 83;
-                this.match(CalculatorParser.T__8);
+                this.state = 97;
+                this.match(CalculatorParser.T__10);
 
             }
             break;
-        case CalculatorParser.EULER:
+
+        case 32:
             localctx = new EulerContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 86;
+            this.state = 100;
             this.match(CalculatorParser.EULER);
             break;
-        default:
-            throw new antlr4.error.NoViableAltException(this);
+
+        case 33:
+            localctx = new UnaryContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 101;
+            this.match(CalculatorParser.SUB);
+            this.state = 102;
+            this.expression(2);
+            break;
+
+        case 34:
+            localctx = new UnaryPlusContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 103;
+            this.match(CalculatorParser.ADD);
+            this.state = 104;
+            this.expression(1);
+            break;
+
         }
         this._ctx.stop = this._input.LT(-1);
-        this.state = 115;
+        this.state = 133;
         this._errHandler.sync(this);
-        var _alt = this._interp.adaptivePredict(this._input,4,this._ctx)
+        var _alt = this._interp.adaptivePredict(this._input,5,this._ctx)
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
             if(_alt===1) {
                 if(this._parseListeners!==null) {
                     this.triggerExitRuleEvent();
                 }
                 _prevctx = localctx;
-                this.state = 113;
+                this.state = 131;
                 this._errHandler.sync(this);
-                var la_ = this._interp.adaptivePredict(this._input,3,this._ctx);
+                var la_ = this._interp.adaptivePredict(this._input,4,this._ctx);
                 switch(la_) {
                 case 1:
                     localctx = new PowContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 89;
-                    if (!( this.precpred(this._ctx, 14))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 14)");
+                    this.state = 107;
+                    if (!( this.precpred(this._ctx, 15))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 15)");
                     }
-                    this.state = 90;
+                    this.state = 108;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
-                    if(!(_la===CalculatorParser.T__3 || _la===CalculatorParser.T__4)) {
+                    if(!(_la===CalculatorParser.T__5 || _la===CalculatorParser.T__6)) {
                         localctx.op = this._errHandler.recoverInline(this);
                     }
                     else {
                         this.consume();
                     }
-                    this.state = 91;
-                    this.expression(15);
+                    this.state = 109;
+                    this.expression(16);
                     break;
 
                 case 2:
                     localctx = new ModContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 92;
-                    if (!( this.precpred(this._ctx, 13))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 13)");
+                    this.state = 110;
+                    if (!( this.precpred(this._ctx, 14))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 14)");
                     }
-                    this.state = 93;
+                    this.state = 111;
                     _la = this._input.LA(1);
-                    if(!(_la===CalculatorParser.T__5 || _la===CalculatorParser.MOD)) {
+                    if(!(_la===CalculatorParser.T__7 || _la===CalculatorParser.MOD)) {
                     this._errHandler.recoverInline(this);
                     }
                     else {
                         this.consume();
                     }
-                    this.state = 94;
-                    this.expression(14);
+                    this.state = 112;
+                    this.expression(15);
                     break;
 
                 case 3:
                     localctx = new WholeContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 95;
-                    if (!( this.precpred(this._ctx, 12))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 12)");
+                    this.state = 113;
+                    if (!( this.precpred(this._ctx, 13))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 13)");
                     }
-                    this.state = 96;
+                    this.state = 114;
                     this.match(CalculatorParser.WHOLE);
-                    this.state = 97;
-                    this.expression(13);
+                    this.state = 115;
+                    this.expression(14);
                     break;
 
                 case 4:
                     localctx = new SqRootContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 98;
-                    if (!( this.precpred(this._ctx, 11))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 11)");
+                    this.state = 116;
+                    if (!( this.precpred(this._ctx, 12))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 12)");
                     }
-                    this.state = 99;
+                    this.state = 117;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
-                    if(!(_la===CalculatorParser.T__6 || _la===CalculatorParser.T__7)) {
+                    if(!(_la===CalculatorParser.T__8 || _la===CalculatorParser.T__9)) {
                         localctx.op = this._errHandler.recoverInline(this);
                     }
                     else {
                         this.consume();
                     }
-                    this.state = 100;
-                    this.expression(12);
+                    this.state = 118;
+                    this.expression(13);
                     break;
 
                 case 5:
                     localctx = new MulDivContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 101;
-                    if (!( this.precpred(this._ctx, 10))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 10)");
+                    this.state = 119;
+                    if (!( this.precpred(this._ctx, 11))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 11)");
                     }
-                    this.state = 102;
+                    this.state = 120;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===CalculatorParser.MUL || _la===CalculatorParser.DIV)) {
@@ -1820,18 +1986,18 @@ CalculatorParser.prototype.expression = function(_p) {
                     else {
                         this.consume();
                     }
-                    this.state = 103;
-                    this.expression(11);
+                    this.state = 121;
+                    this.expression(12);
                     break;
 
                 case 6:
                     localctx = new AddSubContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 104;
-                    if (!( this.precpred(this._ctx, 9))) {
-                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 9)");
+                    this.state = 122;
+                    if (!( this.precpred(this._ctx, 10))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 10)");
                     }
-                    this.state = 105;
+                    this.state = 123;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===CalculatorParser.ADD || _la===CalculatorParser.SUB)) {
@@ -1840,41 +2006,41 @@ CalculatorParser.prototype.expression = function(_p) {
                     else {
                         this.consume();
                     }
-                    this.state = 106;
-                    this.expression(10);
+                    this.state = 124;
+                    this.expression(11);
                     break;
 
                 case 7:
                     localctx = new ExponentContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 107;
+                    this.state = 125;
                     if (!( this.precpred(this._ctx, 5))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 5)");
                     }
-                    this.state = 108;
+                    this.state = 126;
                     this.match(CalculatorParser.EXPONENT);
-                    this.state = 109;
+                    this.state = 127;
                     this.expression(6);
                     break;
 
                 case 8:
                     localctx = new NegExponentContext(this, new ExpressionContext(this, _parentctx, _parentState));
                     this.pushNewRecursionContext(localctx, _startState, CalculatorParser.RULE_expression);
-                    this.state = 110;
+                    this.state = 128;
                     if (!( this.precpred(this._ctx, 4))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 4)");
                     }
-                    this.state = 111;
+                    this.state = 129;
                     this.match(CalculatorParser.NEGEXPONENT);
-                    this.state = 112;
+                    this.state = 130;
                     this.expression(5);
                     break;
 
                 } 
             }
-            this.state = 117;
+            this.state = 135;
             this._errHandler.sync(this);
-            _alt = this._interp.adaptivePredict(this._input,4,this._ctx);
+            _alt = this._interp.adaptivePredict(this._input,5,this._ctx);
         }
 
     } catch( error) {
@@ -1930,7 +2096,7 @@ CalculatorParser.prototype.compileUnit = function() {
     this.enterRule(localctx, 4, CalculatorParser.RULE_compileUnit);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 118;
+        this.state = 136;
         this.match(CalculatorParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1959,17 +2125,17 @@ CalculatorParser.prototype.sempred = function(localctx, ruleIndex, predIndex) {
 CalculatorParser.prototype.expression_sempred = function(localctx, predIndex) {
 	switch(predIndex) {
 		case 0:
-			return this.precpred(this._ctx, 14);
+			return this.precpred(this._ctx, 15);
 		case 1:
-			return this.precpred(this._ctx, 13);
+			return this.precpred(this._ctx, 14);
 		case 2:
-			return this.precpred(this._ctx, 12);
+			return this.precpred(this._ctx, 13);
 		case 3:
-			return this.precpred(this._ctx, 11);
+			return this.precpred(this._ctx, 12);
 		case 4:
-			return this.precpred(this._ctx, 10);
+			return this.precpred(this._ctx, 11);
 		case 5:
-			return this.precpred(this._ctx, 9);
+			return this.precpred(this._ctx, 10);
 		case 6:
 			return this.precpred(this._ctx, 5);
 		case 7:

@@ -1,4 +1,4 @@
-// Generated from Calculator.g4 by ANTLR 4.5.2
+// Generated from Calculator.g4 by ANTLR 4.5.3
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -177,6 +177,11 @@ CalculatorVisitor.prototype.visitUnary = function(ctx) {
 };
 
 
+// Visit a parse tree produced by CalculatorParser#Frac.
+CalculatorVisitor.prototype.visitFrac = function(ctx) {
+};
+
+
 // Visit a parse tree produced by CalculatorParser#Rad.
 CalculatorVisitor.prototype.visitRad = function(ctx) {
 };
@@ -184,6 +189,11 @@ CalculatorVisitor.prototype.visitRad = function(ctx) {
 
 // Visit a parse tree produced by CalculatorParser#Sqr.
 CalculatorVisitor.prototype.visitSqr = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#IntAndFrac.
+CalculatorVisitor.prototype.visitIntAndFrac = function(ctx) {
 };
 
 

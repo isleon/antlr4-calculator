@@ -3,7 +3,7 @@
 // *  Last change: 2016-09-18			*
 // *  Grammar for calculating			*
 // *  formulas.							*
-// *  © 2015 Georg Dangl				*
+// *  ï¿½ 2015 Georg Dangl				*
 // *  info@georgdangl.de				*
 // *									*
 // **************************************	
@@ -44,10 +44,11 @@ expression	:	FLOOR  expression 									#Floor			//	Round down to zero accuracy
 			|	LN  expression 										#Ln				//	Logarithm to e
 			|	EEX  expression 									#Eex			//	10 ^ expr
 			|	LOG  expression 									#Log			//	Logarithm to 10
-			|	RAD  expression 									#Rad			//	Angle to radians (360° base)
-			|	DEG  expression 									#Deg			//	Radians to angle (360° base)
+			|	RAD  expression 									#Rad			//	Angle to radians (360ï¿½ base)
+			|	DEG  expression 									#Deg			//	Radians to angle (360ï¿½ base)
 			|	SQRT expression 									#Sqrt			//	Square root
 			|	SQR expression 										#Sqr			//	Square product
+			| 	FRAC '{' expression '}' '{' expression '}' 			#Frac			//	Frac
 			|	expression op = ('^'|'**') expression				#Pow			//	expr_1 to the expr_2 th power
 			|	expression (MOD | '%' ) expression					#Mod			//	Modulo
 			|	expression WHOLE expression							#Whole			//	Whole part of division rest
@@ -55,6 +56,7 @@ expression	:	FLOOR  expression 									#Floor			//	Round down to zero accuracy
 			|	expression op = ('*'|'/') expression				#MulDiv			//	Multiplication or division
 			|	expression op = ('+'|'-') expression				#AddSub			//	Addition or subtraction
 			|	NUMBER												#Number			//	Single integer or float number
+			| 	INT? FRAC '{'  INT '}' '{' INT '}'  				#IntAndFrac
 			|	'(' expression ')'									#Parenthesis	//	Expression within parentheses
 			|	PI '()'?											#Pi				//	Mathematical constant pi = 3,141593
 			|	expression EXPONENT expression						#Exponent		//  Exponent, e.g. 10e+43
@@ -71,19 +73,21 @@ compileUnit	:	EOF;
  * Lexer Rules
  */
 
-NUMBER		:	FLOAT
-			|	DIGIT+
+NUMBER		:	FLOAT 
+			|	INT
 			;
-FLOAT		:	DIGIT+ (','|'.') DIGIT*
-			|	(','|'.') DIGIT+
+FLOAT		:	INT (','|'.') DIGIT*
+			|	(','|'.') INT
 			;
 DIGIT		:	[0-9]									;
+INT			:	DIGIT+									;
 MOD			:	[Mm][Oo][Dd]							;
 WHOLE		:	[Dd][Ii][Vv]							;
 MUL			:	'*'										;
 DIV			:	'/'										;
 ADD			:	'+'										;
 SUB			:	'-'										;
+FRAC  		: 	'\\frac'								;
 PI			:	[Pp][Ii]								;
 EXPONENT	:	[Ee] '+'								;
 NEGEXPONENT	:	[Ee] '-'								;
