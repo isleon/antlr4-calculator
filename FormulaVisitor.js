@@ -262,7 +262,8 @@ var FormulaVisitor = (function (_super) {
     };
 
     // Visit a parse tree produced by CalculatorParser#Brackets2Number.
-    FormulaVisitor.prototype.visitBrackets2Number = function(ctx) {
+    FormulaVisitor.prototype.visitBrackets2Number = function(context) {
+        return this.visitExpression(context.number(0));
     };
     FormulaVisitor.prototype.visitFrac = function (context) {
         return this.visitExpression(context.expression(0)) / this.visitExpression(context.expression(1));
