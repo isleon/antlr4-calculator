@@ -222,6 +222,16 @@ CalculatorVisitor.prototype.visitCompileUnit = function(ctx) {
 };
 
 
+// Visit a parse tree produced by CalculatorParser#coordinate.
+CalculatorVisitor.prototype.visitCoordinate = function(ctx) {
+};
+
+
+// Visit a parse tree produced by CalculatorParser#enumlist.
+CalculatorVisitor.prototype.visitEnumlist = function(ctx) {
+};
+
+
 // Visit a parse tree produced by CalculatorParser#Float.
 CalculatorVisitor.prototype.visitFloat = function(ctx) {
 };

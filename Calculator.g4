@@ -19,7 +19,10 @@ grammar Calculator;
  */
 
 // Main entry for the calculator
-calculator : expression compileUnit?;
+calculator 	: 	expression
+			|	coordinate
+			|	enumlist
+			;
 
 // Possible expression types
 expression	:	FLOOR  expression 									#Floor			//	Round down to zero accuracy
@@ -54,7 +57,7 @@ expression	:	FLOOR  expression 									#Floor			//	Round down to zero accuracy
 			|	expression op = ('~'|'//') expression				#SqRoot			//	expr_1 nth root of expr_2
 			|	expression op = ('*'|'/') expression				#MulDiv			//	Multiplication or division
 			|	expression op = ('+'|'-') expression				#AddSub			//	Addition or subtraction
-			|	number												#CalNumber			//	Single integer or float number
+			|	number												#CalNumber		//	Single integer or float number
 			|	'(' expression ')'									#Parenthesis	//	Expression within parentheses
 			|	PI '()'?											#Pi				//	Mathematical constant pi = 3,141593
 			|	expression EXPONENT expression						#Exponent		//  Exponent, e.g. 10e+43
@@ -70,17 +73,31 @@ compileUnit	:	EOF;
 /*
  * Lexer Rules
  */
+coordinate	: 	BRACKET_L number COMMA number BRACKET_R	;
+
+enumlist	:	number (',' number)+		;
+
+// numberUnit	:	number unit								;
+LENGTH_UNIT	:	[Kk][Mm]						//千米
+			| 	[Mm]							//米
+			| 	[Dd][Mm]						//分米
+			| 	[Cc][Mm]						//厘米
+			| 	[Mm][Mm]						//毫米
+			| 	[Uu][Mm]						//微米
+			| 	[Nn][Mm]						//纳米
+ 			;
+// AREA_UNIT	:	[Mm]'²';
+DEGREE_UNIT	:	'\\circ' | [°。oO]						;
 
 number		:	FLOAT 												#Float
 			|	INT													#Int
 			| 	INT? FRAC '{'  INT '}' '{' INT '}'  				#IntAndFrac
-			| 	'{' number '}'         								# Brackets2Number
+			| 	'{' number '}'         								#Brackets2Number
 			;
-FLOAT		:	INT (','|'.') DIGIT*
-			|	(','|'.') INT
-			;
-INT			:	DIGIT+									;
-DIGIT		:	[0-9]									;
+FLOAT		:	INT? '.' INT;
+INT			:	[0-9]+									;
+// DIGIT		:	[0-9]									;
+
 MOD			:	[Mm][Oo][Dd]							;
 WHOLE		:	[Dd][Ii][Vv]							;
 MUL			:	'*'										;
@@ -118,7 +135,14 @@ EEX			:	[Ee][Ee][Xx]							;
 LOG			:	[Ll][Oo][Gg]							;
 RAD			:	[Rr][Aa][Dd]							;
 DEG			:	[Dd][Ee][Gg]							;
-WS			:	(' '|'\t'|'\r'|'\n')		->	skip	;
+
+BRACKET_L 	: 	'('							   	;
+BRACKET_R 	: 	')'						   	   	;
+COMMA		:	','								;
+SEPARATOR	:	[,，、。或且]							;
+
+WS 			: 	[ \t\n\r]+ 					-> 	skip	;
+PLACEHOLDER : 	'\\placeholder' 			-> 	skip	;
 COM			:	COMMENT						->	skip	;
 INVALID		:	.										;
 

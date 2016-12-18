@@ -25,14 +25,14 @@ var Calculator = (function () {
         var parseTree = parser.calculator();
         if (errorListener.isValid) {
             var visitorResult = visitor.visitCalculator(parseTree);
-            if (isNaN(visitorResult)) {
-                result.isValid = false;
-                result.result = NaN;
-            }
-            else {
+            // if (isNaN(visitorResult)) {
+            //     result.isValid = false;
+            //     result.result = NaN;
+            // }
+            // else {
                 result.isValid = true;
                 result.result = visitorResult;
-            }
+            // }
             return result;
         }
         result.isValid = false;

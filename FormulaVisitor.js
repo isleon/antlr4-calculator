@@ -13,7 +13,7 @@ var FormulaVisitor = (function (_super) {
     }
     // Visit a parse tree produced by calculatorParser#calculator.
     FormulaVisitor.prototype.visitCalculator = function (context) {
-        return context.expression(0).accept(this);
+        return context.getChild(0).accept(this);
     };
     ;
     FormulaVisitor.prototype.visitExpression = function (context) {
@@ -244,6 +244,23 @@ var FormulaVisitor = (function (_super) {
     // Visit a parse tree produced by CalculatorParser#Int.
     FormulaVisitor.prototype.visitInt = function(context) {
         return parseInt(context.INT().getText())
+    };
+
+    // Visit a parse tree produced by CalculatorParser#coordinate.
+    FormulaVisitor.prototype.visitCoordinate = function(ctx) {
+        var x = ctx.getChild(1).accept(this),
+            y = ctx.getChild(3).accept(this);
+
+        return [x, y];
+    };
+
+    // Visit a parse tree produced by CalculatorParser#enumlist.
+    FormulaVisitor.prototype.visitEnumlist = function(ctx) {
+        var result = [];
+        ctx.number().forEach(function(item) {
+            result.push(this.visit(item));
+        }, this);
+        return result.sort();
     };
 
 
